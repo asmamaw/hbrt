@@ -1,0 +1,13 @@
+openapi: 3.0.1
+info:
+  title: BankHealthAPI
+  description: API Definition of BankHealthAPI
+  version: 1.0.0
+servers:
+- url: http://localhost:8290/bank/health
+paths:
+  /:
+    get:
+      responses:
+        default:
+          description: Default response

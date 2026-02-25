@@ -1,0 +1,10 @@
+---
+key: "BankHealthAPI-1.0.0"
+name : "BankHealthAPI"
+displayName : "BankHealthAPI"
+description: "Sample API"
+version: "1.0.0"
+serviceUrl: "https://{MI_HOST}:{MI_PORT}/bank/health"
+definitionType: "OAS3"
+securityType: "BASIC"
+mutualSSLEnabled: false
