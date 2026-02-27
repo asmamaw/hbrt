@@ -5,6 +5,7 @@
             <payloadFactory media-type="json">
                 <format>
                {"status":"BANK_OK",
+                "name":"asmamaw",
                  "id":"1234"}
             </format>
                 <args/>
