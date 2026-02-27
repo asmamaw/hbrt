@@ -4,7 +4,8 @@
         <inSequence>
             <payloadFactory media-type="json">
                 <format>
-               {"status":"BANK_OK"}
+               {"status":"BANK_OK",
+                 "id":"1234"}
             </format>
                 <args/>
             </payloadFactory>
