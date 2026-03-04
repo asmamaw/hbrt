@@ -4,7 +4,10 @@
         <inSequence>
             <payloadFactory media-type="json">
                 <format>
-               {"status":"BANK_OK",
+         {
+          "body":
+
+                {"status":"BANK_OK",
                 "name":"asmamaw",
                 "age":"30",
                 "proffession":"engineer",
@@ -13,6 +16,7 @@
                  "maritalstatus":"married",
                 "hoby":"reading",
                  "id":"1234"}
+}
             </format>
                 <args/>
             </payloadFactory>
