@@ -7,7 +7,7 @@
          {
           "body":
 
-                {"status":"BANK_OK",
+                {"status":"00",
                 "name":"asmamaw",
                 "age":"30",
                 "proffession":"engineer",
