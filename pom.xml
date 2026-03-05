@@ -8,37 +8,42 @@
   <packaging>pom</packaging>
   <name>BankPaymentIntegration</name>
   <description>BankPaymentIntegration</description>
+  
   <modules>
     <module>BankPaymentIntegrationConfigs</module>
     <module>BankPaymentIntegrationCompositeExporter</module>
   </modules>
-  <scm>
-    <connection>scm:git:https://github.com/username/repository.git</connection>
-    <developerConnection>scm:git:https://github.com/username/repository.git</developerConnection>
-    <url>https://github.com/username/repository.git</url>
-  </scm>
-  <distributionManagement>
-    <repository>
-      <id>release</id>
-      <name>Release Distribution Repository</name>
-      <url>https://example.com/nexus/repository</url>
-    </repository>
-  </distributionManagement>
+
   <properties>
+    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     <project.scm.id>integration-project</project.scm.id>
+    <maven.compiler.source>1.8</maven.compiler.source>
+    <maven.compiler.target>1.8</maven.compiler.target>
   </properties>
+
   <build>
     <plugins>
+      <plugin>
+        <groupId>org.codehaus.mojo</groupId>
+        <artifactId>versions-maven-plugin</artifactId>
+        <version>2.8.1</version>
+        <configuration>
+          <generateBackupPoms>false</generateBackupPoms>
+        </configuration>
+      </plugin>
+
       <plugin>
         <artifactId>maven-release-plugin</artifactId>
         <version>3.0.0-M1</version>
         <configuration />
       </plugin>
+
       <plugin>
         <artifactId>maven-deploy-plugin</artifactId>
         <version>3.0.0-M1</version>
         <configuration />
       </plugin>
+
       <plugin>
         <artifactId>maven-eclipse-plugin</artifactId>
         <version>2.9</version>
@@ -50,17 +55,18 @@
       </plugin>
     </plugins>
   </build>
+
+  <distributionManagement>
+    <repository>
+      <id>hibret</id>
+      <name>Nexus Distribution Repository</name>
+      <url>http://nexus3:8081/repository/hibret/</url>
+    </repository>
+  </distributionManagement>
+
   <profiles>
     <profile>
-      <id>Solution</id>
-      <build />
-    </profile>
-    <profile>
       <id>Docker</id>
-      <build />
-    </profile>
-    <profile>
-      <id>Kubernetes</id>
       <build />
     </profile>
     <profile>
