@@ -13,15 +13,13 @@
     <module>BankPaymentIntegrationCompositeExporter</module>
   </modules>
 
-  <properties>
-    <revision>1.0.0-SNAPSHOT</revision>
-    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-  </properties>
 <properties>
     <revision>1.0.0-SNAPSHOT</revision>
-    <artifact.version>1.0.0</artifact.version> 
+    <artifact.version>1.0.0</artifact.version>
+    <maven.compiler.source>1.8</maven.compiler.source>
+    <maven.compiler.target>1.8</maven.compiler.target>
+    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 </properties>
-
   <repositories>
     <repository>
       <id>wso2-nexus</id>
