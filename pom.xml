@@ -17,6 +17,10 @@
     <revision>1.0.0-SNAPSHOT</revision>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
   </properties>
+<properties>
+    <revision>1.0.0-SNAPSHOT</revision>
+    <artifact.version>1.0.0</artifact.version> 
+</properties>
 
   <repositories>
     <repository>

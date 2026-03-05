@@ -42,22 +42,19 @@
 
   <dependencies>
     <dependency>
-      <groupId>com.example.metadata</groupId>
-      <artifactId>BankHealthAPI_swagger</artifactId>
-      <version>${project.version}</version>
-      <type>yaml</type>
+        <groupId>com.example.metadata</groupId>
+        <artifactId>BankHealthAPI_swagger</artifactId>
+        <version>${artifact.version}</version> <type>yaml</type>
     </dependency>
     <dependency>
-      <groupId>com.example.api</groupId>
-      <artifactId>BankHealthAPI</artifactId>
-      <version>${project.version}</version>
-      <type>xml</type>
+        <groupId>com.example.api</groupId>
+        <artifactId>BankHealthAPI</artifactId>
+        <version>${artifact.version}</version> <type>xml</type>
     </dependency>
     <dependency>
-      <groupId>com.example.metadata</groupId>
-      <artifactId>BankHealthAPI_metadata</artifactId>
-      <version>${project.version}</version>
-      <type>yaml</type>
+        <groupId>com.example.metadata</groupId>
+        <artifactId>BankHealthAPI_metadata</artifactId>
+        <version>${artifact.version}</version> <type>yaml</type>
     </dependency>
   </dependencies>
 
