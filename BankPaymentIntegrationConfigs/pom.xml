@@ -1,132 +1,153 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<project xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd" xmlns="http://maven.apache.org/POM/4.0.0"
-    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
-  <modelVersion>4.0.0</modelVersion>
-  
-  <parent>
-    <groupId>com.example</groupId>
-    <artifactId>BankPaymentIntegration</artifactId>
-    <version>${revision}</version>
-    <relativePath>../pom.xml</relativePath>
-  </parent>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 
+         https://maven.apache.org/xsd/maven-4.0.0.xsd">
 
-  <artifactId>BankPaymentIntegrationConfigs</artifactId>
-  <packaging>pom</packaging>
-  <name>BankPaymentIntegrationConfigs</name>
-  <description>BankPaymentIntegrationConfigs</description>
+    <modelVersion>4.0.0</modelVersion>
 
-  <properties>
-    <CApp.type>bpel/workflow=zip,lib/registry/filter=jar,webapp/jaxws=war,lib/library/bundle=jar,service/dataservice=dbs,synapse/local-entry=xml,synapse/proxy-service=xml,carbon/application=car,registry/resource=zip,lib/dataservice/validator=jar,synapse/endpoint=xml,web/application=war,lib/carbon/ui=jar,service/axis2=aar,synapse/sequence=xml,synapse/configuration=xml,wso2/gadget=dar,lib/registry/handlers=jar,lib/synapse/mediator=jar,synapse/task=xml,synapse/api=xml,synapse/template=xml,synapse/message-store=xml,synapse/message-processors=xml,synapse/inbound-endpoint=xml,synapse/metadata=yaml</CApp.type>
-    <maven.test.skip>false</maven.test.skip>
-  </properties>
+    <parent>
+        <groupId>com.example</groupId>
+        <artifactId>BankPaymentIntegration</artifactId>
+        <version>${revision}</version>
+        <relativePath>../pom.xml</relativePath>
+    </parent>
 
-  <repositories>
-    <repository>
-      <id>wso2-nexus</id>
-      <url>https://maven.wso2.org/nexus/content/groups/wso2-public/</url>
-      <releases><enabled>true</enabled></releases>
-      <snapshots><enabled>false</enabled></snapshots>
-    </repository>
-  </repositories>
+    <artifactId>BankPaymentIntegrationConfigs</artifactId>
+    <packaging>pom</packaging>
 
-  <pluginRepositories>
-    <pluginRepository>
-      <id>wso2-nexus</id>
-      <url>https://maven.wso2.org/nexus/content/groups/wso2-public/</url>
-      <releases><enabled>true</enabled></releases>
-      <snapshots><enabled>false</enabled></snapshots>
-    </pluginRepository>
-  </pluginRepositories>
+    <name>BankPaymentIntegrationConfigs</name>
+    <description>BankPaymentIntegrationConfigs</description>
 
-  <build>
-    <directory>target/capp</directory>
-    <plugins>
-      <plugin>
-        <artifactId>maven-eclipse-plugin</artifactId>
-        <version>2.9</version>
-        <configuration>
-          <buildcommands />
-          <projectnatures>
-            <projectnature>org.wso2.developerstudio.eclipse.esb.project.nature</projectnature>
-          </projectnatures>
-        </configuration>
-      </plugin>
+    <properties>
+        <CApp.type>
+            bpel/workflow=zip,
+            lib/registry/filter=jar,
+            webapp/jaxws=war,
+            lib/library/bundle=jar,
+            service/dataservice=dbs,
+            synapse/local-entry=xml,
+            synapse/proxy-service=xml,
+            carbon/application=car,
+            registry/resource=zip,
+            lib/dataservice/validator=jar,
+            synapse/endpoint=xml,
+            web/application=war,
+            lib/carbon/ui=jar,
+            service/axis2=aar,
+            synapse/sequence=xml,
+            synapse/configuration=xml,
+            wso2/gadget=dar,
+            lib/registry/handlers=jar,
+            lib/synapse/mediator=jar,
+            synapse/task=xml,
+            synapse/api=xml,
+            synapse/template=xml,
+            synapse/message-store=xml,
+            synapse/message-processors=xml,
+            synapse/inbound-endpoint=xml,
+            synapse/metadata=yaml
+        </CApp.type>
 
-<plugin>
-    <groupId>org.wso2.maven</groupId>
-    <artifactId>wso2-esb-api-plugin</artifactId>
-    <version>2.1.0</version>
-    <extensions>true</extensions>
-    <executions>
-        <execution>
-            <id>api</id>
-            <phase>process-resources</phase>
-            <goals>
-                <goal>pom-gen</goal>
-            </goals>
-            <configuration>
-                <artifactLocation>.</artifactLocation>
-                <typeList>${CApp.type}</typeList>
-                <appVersion>${revision}</appVersion> 
-            </configuration>
-        </execution>
-    </executions>
-</plugin>
+        <maven.test.skip>false</maven.test.skip>
+    </properties>
 
-  
-      <plugin>
-        <groupId>org.wso2.maven</groupId>
-        <artifactId>wso2-esb-api-plugin</artifactId>
-        <version>2.1.0</version>
-        <extensions>true</extensions>
-        <executions>
-          <execution>
-            <id>api</id>
-            <phase>process-resources</phase>
-            <goals>
-              <goal>pom-gen</goal>
-            </goals>
-            <configuration>
-              <artifactLocation>.</artifactLocation>
-              <typeList>${CApp.type}</typeList>
-            </configuration>
-          </execution>
-        </executions>
-        <dependencies>
-          <dependency>
-            <groupId>com.sun.activation</groupId>
-            <artifactId>javax.activation</artifactId>
-            <version>1.2.0</version>
-          </dependency>
-        </dependencies>
-      </plugin>
+    <repositories>
+        <repository>
+            <id>wso2-nexus</id>
+            <url>https://maven.wso2.org/nexus/content/groups/wso2-public/</url>
+        </repository>
+    </repositories>
 
-      <plugin>
-        <groupId>org.wso2.maven</groupId>
-        <artifactId>wso2-esb-metadata-plugin</artifactId>
-        <version>5.2.34</version>
-        <extensions>true</extensions>
-        <executions>
-          <execution>
-            <id>metadata</id>
-            <phase>process-resources</phase>
-            <goals>
-              <goal>pom-gen</goal>
-            </goals>
-            <configuration>
-              <artifactLocation>.</artifactLocation>
-              <typeList>${CApp.type}</typeList>
-            </configuration>
-          </execution>
-        </executions>
-        <dependencies>
-          <dependency>
-            <groupId>com.sun.activation</groupId>
-            <artifactId>javax.activation</artifactId>
-            <version>1.2.0</version>
-          </dependency>
-        </dependencies>
-      </plugin>
-    </plugins>
-  </build>
+    <pluginRepositories>
+        <pluginRepository>
+            <id>wso2-nexus</id>
+            <url>https://maven.wso2.org/nexus/content/groups/wso2-public/</url>
+        </pluginRepository>
+    </pluginRepositories>
+
+    <build>
+        <directory>target/capp</directory>
+
+        <plugins>
+
+            <!-- Eclipse plugin -->
+            <plugin>
+                <artifactId>maven-eclipse-plugin</artifactId>
+                <version>2.9</version>
+                <configuration>
+                    <buildcommands/>
+                    <projectnatures>
+                        <projectnature>org.wso2.developerstudio.eclipse.esb.project.nature</projectnature>
+                    </projectnatures>
+                </configuration>
+            </plugin>
+
+            <!-- API artifact generation -->
+            <plugin>
+                <groupId>org.wso2.maven</groupId>
+                <artifactId>wso2-esb-api-plugin</artifactId>
+                <version>2.1.0</version>
+                <extensions>true</extensions>
+
+                <executions>
+                    <execution>
+                        <id>generate-api-artifact</id>
+                        <phase>process-resources</phase>
+                        <goals>
+                            <goal>pom-gen</goal>
+                        </goals>
+                        <configuration>
+                            <artifactLocation>.</artifactLocation>
+                            <typeList>${CApp.type}</typeList>
+                            <appVersion>${revision}</appVersion>
+                        </configuration>
+                    </execution>
+                </executions>
+
+                <dependencies>
+                    <dependency>
+                        <groupId>com.sun.activation</groupId>
+                        <artifactId>javax.activation</artifactId>
+                        <version>1.2.0</version>
+                    </dependency>
+                </dependencies>
+
+            </plugin>
+
+            <!-- Metadata artifact generation -->
+            <plugin>
+                <groupId>org.wso2.maven</groupId>
+                <artifactId>wso2-esb-metadata-plugin</artifactId>
+                <version>5.2.34</version>
+                <extensions>true</extensions>
+
+                <executions>
+                    <execution>
+                        <id>generate-metadata-artifact</id>
+                        <phase>process-resources</phase>
+                        <goals>
+                            <goal>pom-gen</goal>
+                        </goals>
+                        <configuration>
+                            <artifactLocation>.</artifactLocation>
+                            <typeList>${CApp.type}</typeList>
+                            <appVersion>${revision}</appVersion>
+                        </configuration>
+                    </execution>
+                </executions>
+
+                <dependencies>
+                    <dependency>
+                        <groupId>com.sun.activation</groupId>
+                        <artifactId>javax.activation</artifactId>
+                        <version>1.2.0</version>
+                    </dependency>
+                </dependencies>
+
+            </plugin>
+
+        </plugins>
+    </build>
+
 </project>

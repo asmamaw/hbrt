@@ -1,80 +1,84 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<project xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd" xmlns="http://maven.apache.org/POM/4.0.0"
-    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
-  <modelVersion>4.0.0</modelVersion>
-  
-  <parent>
-    <groupId>com.example</groupId>
-    <artifactId>BankPaymentIntegration</artifactId>
-    <version>${revision}</version>
-    <relativePath>../pom.xml</relativePath>
-  </parent>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 
+         https://maven.apache.org/xsd/maven-4.0.0.xsd">
 
-  <artifactId>BankPaymentIntegrationCompositeExporter</artifactId>
-  <packaging>carbon/application</packaging>
-  <name>BankPaymentIntegrationCompositeExporter</name>
-  <description>BankPaymentIntegrationCompositeExporter</description>
+    <modelVersion>4.0.0</modelVersion>
 
-  <properties>
-    <com.example.metadata_._BankHealthAPI_swagger>capp/EnterpriseServiceBus</com.example.metadata_._BankHealthAPI_swagger>
-    <com.example.api_._BankHealthAPI>capp/EnterpriseServiceBus</com.example.api_._BankHealthAPI>
-    <com.example.metadata_._BankHealthAPI_metadata>capp/EnterpriseServiceBus</com.example.metadata_._BankHealthAPI_metadata>
-    <artifact.types>jaggery/app=zip,synapse/priority-executor=xml,synapse/inbound-endpoint=xml,service/rule=aar,synapse/message-store=xml,event/stream=json,service/meta=xml,datasource/datasource=xml,synapse/proxy-service=xml,bpel/workflow=zip,synapse/sequence=xml,synapse/endpointTemplate=xml,carbon/application=car,wso2/gadget=dar,synapse/api=xml,synapse/event-source=xml,synapse/message-processors=xml,event/receiver=xml,lib/dataservice/validator=jar,synapse/template=xml,synapse/endpoint=xml,lib/carbon/ui=jar,lib/synapse/mediator=jar,synapse/metadata=yaml,event/publisher=xml,synapse/local-entry=xml,synapse/task=xml,webapp/jaxws=war,registry/resource=zip,synapse/configuration=xml,service/axis2=aar,synapse/lib=zip,synapse/sequenceTemplate=xml,event/execution-plan=siddhiql,service/dataservice=dbs,web/application=war,lib/library/bundle=jar</artifact.types>
-  </properties>
+    <parent>
+        <groupId>com.example</groupId>
+        <artifactId>BankPaymentIntegration</artifactId>
+        <version>${revision}</version>
+        <relativePath>../pom.xml</relativePath>
+    </parent>
 
-  <repositories>
-    <repository>
-      <id>wso2-nexus</id>
-      <url>https://maven.wso2.org/nexus/content/groups/wso2-public/</url>
-      <releases><enabled>true</enabled></releases>
-      <snapshots><enabled>false</enabled></snapshots>
-    </repository>
-  </repositories>
+    <artifactId>BankPaymentIntegrationCompositeExporter</artifactId>
+    <packaging>carbon/application</packaging>
 
-  <pluginRepositories>
-    <pluginRepository>
-      <id>wso2-nexus</id>
-      <url>https://maven.wso2.org/nexus/content/groups/wso2-public/</url>
-      <releases><enabled>true</enabled></releases>
-      <snapshots><enabled>false</enabled></snapshots>
-    </pluginRepository>
-  </pluginRepositories>
+    <name>BankPaymentIntegrationCompositeExporter</name>
+    <description>BankPaymentIntegrationCompositeExporter</description>
 
-  <dependencies>
-    <dependency>
-        <groupId>com.example.metadata</groupId>
-        <artifactId>BankHealthAPI_swagger</artifactId>
-        <version>${artifact.version}</version> <type>yaml</type>
-    </dependency>
-    <dependency>
-        <groupId>com.example.api</groupId>
-        <artifactId>BankHealthAPI</artifactId>
-        <version>${artifact.version}</version> <type>xml</type>
-    </dependency>
-    <dependency>
-        <groupId>com.example.metadata</groupId>
-        <artifactId>BankHealthAPI_metadata</artifactId>
-        <version>${artifact.version}</version> <type>yaml</type>
-    </dependency>
-  </dependencies>
+    <properties>
+        <com.example.metadata_._BankHealthAPI_swagger>capp/EnterpriseServiceBus</com.example.metadata_._BankHealthAPI_swagger>
+        <com.example.api_._BankHealthAPI>capp/EnterpriseServiceBus</com.example.api_._BankHealthAPI>
+        <com.example.metadata_._BankHealthAPI_metadata>capp/EnterpriseServiceBus</com.example.metadata_._BankHealthAPI_metadata>
+    </properties>
 
-  <build>
-    <plugins>
-      <plugin>
-        <groupId>org.wso2.maven</groupId>
-        <artifactId>maven-car-plugin</artifactId>
-        <version>5.2.34</version>
-        <extensions>true</extensions>
-        <executions>
-          <execution>
-            <id>car</id>
-            <phase>package</phase>
-            <goals>
-              <goal>car</goal>
-            </goals>
-          </execution>
-        </executions>
-      </plugin>
-    </plugins>
-  </build>
+    <repositories>
+        <repository>
+            <id>wso2-nexus</id>
+            <url>https://maven.wso2.org/nexus/content/groups/wso2-public/</url>
+        </repository>
+    </repositories>
+
+    <dependencies>
+
+        <dependency>
+            <groupId>com.example.metadata</groupId>
+            <artifactId>BankHealthAPI_swagger</artifactId>
+            <version>${revision}</version>
+            <type>yaml</type>
+        </dependency>
+
+        <dependency>
+            <groupId>com.example.api</groupId>
+            <artifactId>BankHealthAPI</artifactId>
+            <version>${revision}</version>
+            <type>xml</type>
+        </dependency>
+
+        <dependency>
+            <groupId>com.example.metadata</groupId>
+            <artifactId>BankHealthAPI_metadata</artifactId>
+            <version>${revision}</version>
+            <type>yaml</type>
+        </dependency>
+
+    </dependencies>
+
+    <build>
+        <plugins>
+
+            <plugin>
+                <groupId>org.wso2.maven</groupId>
+                <artifactId>maven-car-plugin</artifactId>
+                <version>5.2.34</version>
+                <extensions>true</extensions>
+
+                <executions>
+                    <execution>
+                        <id>create-car</id>
+                        <phase>package</phase>
+                        <goals>
+                            <goal>car</goal>
+                        </goals>
+                    </execution>
+                </executions>
+
+            </plugin>
+
+        </plugins>
+    </build>
+
 </project>
